@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Все записи {% endblock %}
+
+{% block content %}
+
+    <div class="container mt-4">
+        <h2>Все записи</h2>
+        {% if posts %}
+            <div class="list-group">
+                {% for post in posts %}
+                    <div class="list-group-item">
+                        <h5>{{ post.title }}</h5>
+                        <p>{{ post.content }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Пока постов не найдено. Создайте новый пост!</p>
+        {% endif %}
+    </div>
+
+
+{% endblock %}
